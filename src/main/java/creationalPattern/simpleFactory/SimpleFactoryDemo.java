@@ -6,7 +6,7 @@ package creationalPattern.simpleFactory;
  * 但它不属于GOF23中设计模式。简单工厂适用于工厂类负责创建的对象较少的场景，
  * 且客户端只需要传入工厂类的参数，对于如何创建对象的逻辑不需要关心
  */
-public class test {
+public class SimpleFactoryDemo {
     public static void main(String[] args) {
         //v1
 //        CourseFactory courseFactory = new CourseFactory();
