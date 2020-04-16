@@ -1,65 +1,31 @@
 package creationalPattern.abstractFactoryPattern;
 
+
 /**
  * 抽象工厂模式
  *
- * 优点：
- * 当一个产品族中的多个对象被设计成一起工作时，它能保证客户端始终只使用同一个产品族中的对象。
+ *抽象工厂模式（Abstract Factory Pattern）是指提供一个创建一系列相关或者相互依赖
+ * 的接口，无须指定他们具体的类。客户端（应用层）不依赖与产品类实例如何被创建、实现等
+ * 细节，强调的是一系列相关的产品对象（属于同一产品族）一起使用创建对象需要大量的重复
+ * 的代码。需要提供一个产品类的库，所有的产品以同样的接口出现，从而使客户端不依赖于具
+ * 体实现。
  *
- * 缺点：
- * 产品族扩展非常困难，要增加一个系列的某一产品，既要在抽象的 Creator 里加代码，
- * 又要在具体的里面加代码。
  *
- * 使用场景：
- * 1、QQ 换皮肤，一整套一起换。
- * 2、生成不同操作系统的程序。
- *
- * 注意事项：
- * 产品族难扩展，产品等级易扩展。
+ * 下面的代码完整描述了两个产品族Java课程和Python课程，也描述了两个产品等级视频和笔记。
+ * 抽象工厂非常完美清晰地描述这样一层复杂的关系。但是如果再继续扩展产品等级，
+ * 将源码Source也加入到课程中，那么我们的代码从抽象工厂，到具体工厂要全部调整，
+ * 很显然不符合开闭原则。因此抽象工厂也是有缺点的：
+ * 1、规定了所有可能被创建的产品集合，产品族中扩展新的产品困难，需要修改抽象工厂的接口
+ * 2、增加了系统的抽象性和理解难度
  */
 public class AbstractFactoryPatternDemo {
    public static void main(String[] args) {
- 
-      //获取形状工厂
-      AbstractFactory shapeFactory = FactoryProducer.getFactory("SHAPE");
+      JavaCourseFactory javaCourseFactory = new JavaCourseFactory();
+      javaCourseFactory.createNote().edit();
+      javaCourseFactory.createVideo().record();
 
-      //获取形状为 Circle 的对象
-      Shape shape1 = shapeFactory.getShape("CIRCLE");
-
-      //调用 Circle 的 draw 方法
-      shape1.draw();
-
-      //获取形状为 Rectangle 的对象
-      Shape shape2 = shapeFactory.getShape("RECTANGLE");
-
-      //调用 Rectangle 的 draw 方法
-      shape2.draw();
-
-      //获取形状为 Square 的对象
-      Shape shape3 = shapeFactory.getShape("SQUARE");
-
-      //调用 Square 的 draw 方法
-      shape3.draw();
-
-      //获取颜色工厂
-      AbstractFactory colorFactory = FactoryProducer.getFactory("COLOR");
-
-      //获取颜色为 Red 的对象
-      Color color1 = colorFactory.getColor("RED");
-
-      //调用 Red 的 fill 方法
-      color1.fill();
-
-      //获取颜色为 Green 的对象
-      Color color2 = colorFactory.getColor("Green");
-
-      //调用 Green 的 fill 方法
-      color2.fill();
-
-      //获取颜色为 Blue 的对象
-      Color color3 = colorFactory.getColor("BLUE");
-
-      //调用 Blue 的 fill 方法
-      color3.fill();
+      PythonCourseFactory pythonCourseFactory = new PythonCourseFactory();
+      pythonCourseFactory.createNote().edit();
+      pythonCourseFactory.createVideo().record();
    }
 }

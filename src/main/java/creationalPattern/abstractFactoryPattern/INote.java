@@ -1,5 +1,5 @@
 package creationalPattern.abstractFactoryPattern;
 
-public interface Shape {
-   void draw();
+public interface INote {
+    void edit();
 }
