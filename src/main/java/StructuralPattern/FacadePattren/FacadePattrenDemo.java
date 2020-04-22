@@ -25,7 +25,7 @@ package StructuralPattern.FacadePattren;
  * 2、不符合开闭原则
  * 3、某些情况下可能违背单一职责原则
  *
- * 与代理模式区别
+ * 与静态代理模式区别
  * 代理模式注重扩展增强，门面模式注重组合
  */
 public class FacadePattrenDemo {
