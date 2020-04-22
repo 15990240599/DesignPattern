@@ -17,7 +17,7 @@ public class StaticProxyDemo {
 
             IOrderService orderService = new OrderServiceStaticProxy(new OrderService());
             orderService.createOrder(order);
-            
+
         }catch (Exception e){
             e.printStackTrace();
         }
