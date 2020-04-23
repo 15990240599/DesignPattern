@@ -1,0 +1,10 @@
+对象池的基本思路是：将用过的对象保存起来，等下一次需要这种对象的时候，在拿出来重复使用，从而
+在一定程度上减少频繁创建对象所造成的开销。用于充当保存对象的“容器”的的对象，被称为“对象池”（Object Pool，或简称Pool）
+
+Apache Commons Pool实现了对象池的功能。定义了对象的生成、销毁、钝化等操作及其
+状态转换，并提供几个默认的对象池实现。有几个重要的对象：
+PooledObject（池对象）：用于封装对象（如：线程、数据库链接、TCP连接），将其包裹成可被池管理的对象
+PooledObjectFactory（池对象工厂）：定义了操作PooledObject实例生命周期的一些方法，
+PooledObjectFactory必须实现线程安全。
+ObjectPool（对象池）：ObjectPool负责管理PooledObject，如：借出对象，返回对象，教研对象，
+有多少激活对象，有多少空闲对象
