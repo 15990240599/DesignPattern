@@ -1,4 +1,4 @@
-package creationalPattern.singletonPattern;
+package creationalpattern.singletonpattern;
 
 import java.lang.reflect.Constructor;
 

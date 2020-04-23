@@ -1,4 +1,4 @@
-package creationalPattern.singletonPattern;
+package creationalpattern.singletonpattern;
 
 /**
  * 饿汉式静态代码块单例模式

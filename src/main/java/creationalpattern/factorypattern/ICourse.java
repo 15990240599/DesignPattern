@@ -1,4 +1,4 @@
-package creationalPattern.factoryPattern;
+package creationalpattern.factorypattern;
 
 public interface ICourse {
     void record();

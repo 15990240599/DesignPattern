@@ -1,4 +1,4 @@
-package creationalPattern.singletonPattern;
+package creationalpattern.singletonpattern;
 
 /**
  * 懒汉式：
