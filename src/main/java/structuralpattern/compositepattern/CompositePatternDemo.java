@@ -60,8 +60,8 @@ package structuralpattern.compositepattern;
  *  3、简化客户端代码
  *  4、符合开闭原则
  *  缺点：
- *  1、限制类型时会比较互砸
- *  2、是设计变得更加抽象
+ *  1、限制类型时会比较复杂
+ *  2、使设计变得更加抽象
  *
  */
 public class CompositePatternDemo {
