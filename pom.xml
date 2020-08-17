@@ -65,7 +65,12 @@
             <version>2.4</version>
         </dependency>
 
-
+        <!--other dependency-->
+        <dependency>
+            <groupId>com.google.guave</groupId>
+            <artifactId>guava</artifactId>
+            <version>20.8</version>
+        </dependency>
     </dependencies>
 
 </project>
