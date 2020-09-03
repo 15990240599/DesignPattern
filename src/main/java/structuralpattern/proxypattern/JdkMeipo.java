@@ -6,9 +6,9 @@ import java.lang.reflect.Proxy;
 
 public class JdkMeipo implements InvocationHandler {
 
-    private IPerson target;
+    private Object target;
 
-    public IPerson getInstance(IPerson target){
+    public IPerson getInstance(Object target){
         this.target = target;
         Class<?> clazz = target.getClass();
         return (IPerson) Proxy.newProxyInstance(clazz.getClassLoader(),clazz.getInterfaces(),this);
