@@ -1,4 +1,4 @@
-package structuralpattern.proxypattern;
+package structuralpattern.proxypattern.jdkproxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -11,8 +11,18 @@ public class JdkMeipo implements InvocationHandler {
     public IPerson getInstance(Object target){
         this.target = target;
         Class<?> clazz = target.getClass();
+
         return (IPerson) Proxy.newProxyInstance(clazz.getClassLoader(),clazz.getInterfaces(),this);
     }
+
+    /**
+     *
+     * @param proxy 代理的对象
+     * @param method 代理对象调用的方法
+     * @param args 方法的参数
+     * @return
+     * @throws Throwable
+     */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
        before();

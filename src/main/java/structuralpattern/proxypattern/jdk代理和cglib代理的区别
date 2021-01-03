@@ -1,0 +1,6 @@
+Jdk动态代理：
+ 被代理的类一定要实现接口
+ 代理方法实现InvocationHandler
+cglib动态代理
+ 被代理类无需实现接口，单单一个类即可
+ 代理方法实现MethodInterceptor

@@ -1,4 +1,4 @@
-package structuralpattern.proxypattern;
+package structuralpattern.proxypattern.jdkproxy;
 
 /**
  * 代理模式
