@@ -1,6 +1,9 @@
 package creationalpattern.prototypepattern;
 
+import util.GsonUtil;
+
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ConcretePrototypeV2 implements Cloneable, Serializable {
@@ -49,6 +52,23 @@ public class ConcretePrototypeV2 implements Cloneable, Serializable {
             return null;
         }
     }
+
+    public ConcretePrototypeV2 jsonDeepClone(){
+        String jsonObject = GsonUtil.GsonString(this);
+        ConcretePrototypeV2 concretePrototypeV2 = GsonUtil.GsonToBean(jsonObject, ConcretePrototypeV2.class);
+        return concretePrototypeV2;
+    }
+
+//    public ConcretePrototypeV2 deepCloneHobbies(){
+//        try {
+//            ConcretePrototypeV2 concretePrototypeV2 = (ConcretePrototypeV2) super.clone();
+//            concretePrototypeV2.hobbies = (List)((ArrayList)concretePrototypeV2.hobbies).clone();
+//            return concretePrototypeV2;
+//        } catch (CloneNotSupportedException e) {
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
 
     @Override
     public String toString() {
