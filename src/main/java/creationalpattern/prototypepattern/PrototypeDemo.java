@@ -37,7 +37,7 @@ public class PrototypeDemo {
         prototype.setHobbies(hobbis);
         System.out.println(prototype);
         //拷贝原型对象
-        ConcretePrototypeV2 cloneType = prototype.deepCloneHobbies();
+        ConcretePrototypeV2 cloneType = prototype.jsonDeepClone();
         cloneType.getHobbies().add("技术控");
 
         System.out.println("原型对象：" + prototype);
